@@ -70,9 +70,9 @@ function _mitsuhiko_precmd() {
     precmd_update_git_vars
 
     #
-    echo -n $'\n'$_MITSUHIKO_PROMPT$' '$(git_super_status)$(hg_prompt_info)$(virtualenv_prompt_info)$(multirust_prompt_info)$(transportstatus_prompt_info) > $_MITSUHIKO_ASYNC_PROMPT_FN
+    echo -n $'\n'$_MITSUHIKO_PROMPT$' '$(git_super_status)$(hg_prompt_info)$(virtualenv_prompt_info) > $_MITSUHIKO_ASYNC_PROMPT_FN
     if [[ x$_mitsuhiko_rv != x0 ]]; then
-      echo -n " exited %{$fg[red]%}$_mitsuhiko_rv%{$reset_color%}" >> $_MITSUHIKO_ASYNC_PROMPT_FN
+      echo -n " %{$fg[red]%}✘%{$reset_color%}" >> $_MITSUHIKO_ASYNC_PROMPT_FN
     fi
     echo -n $' \n$ ' >> $_MITSUHIKO_ASYNC_PROMPT_FN
 
